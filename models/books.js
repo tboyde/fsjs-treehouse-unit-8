@@ -10,7 +10,7 @@ module.exports = (sequelize) => {
           allowNull: false, 
           validate: {
               notEmpty: {
-                  msg: 'Please Enter Valid "Author" Name', 
+                  msg: 'Please Enter Valid "Title" Name', 
               }
           }
       }, 

@@ -2,7 +2,6 @@ var express = require('express');
 var router = express.Router();
 var Book = require('../models').Book
 
-
 /* Handler function to wrap each route. */
 const asyncHandler = (cb) => {
   return async (req, res, next) => {
@@ -44,9 +43,9 @@ router.post('/', asyncHandler(async (req, res) => {
 /* GET individual book. */
 router.get("/:id", asyncHandler(async (req, res) => {
   const book = await Book.findByPk(req.params.id)
-  book ? res.render("books/update-book", {book, title: book.title}) : res.sendStatus(404); 
+  const title =`Update Book: ${book.title}`; 
+  book ? res.render("books/update-book", {book, title}) : res.sendStatus(404); 
 }));
-
 
 /* Update an existing book record. */
 router.post('/:id', asyncHandler(async (req, res) => {
