@@ -4,7 +4,7 @@
 
 // Error handler for handling non-existent routes
 const pageNotFound = (req, res, next) => {
-    const err = new Error('err'); 
+    const err = new Error(); 
     err.status = 404;  
     err.message = 'Sorry, we unfortunately do not have a page that matches your search. Please try again.'
     next(err)
@@ -14,7 +14,7 @@ const pageNotFound = (req, res, next) => {
   const handleAllErrors = (err, req, res, next) => {
   if (err.status === 404 ){ 
     res.status(404); 
-    res.render('page-not-found', { err, title: 'Page Not Found' }); 
+    res.render('page-not-found', {err, title: 'Page Not Found'}); 
     console.log('404 Error has occured. Please try again.'); 
   } else {
     err.status = 500; 
