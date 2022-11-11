@@ -56,7 +56,7 @@ router.post('/:id', asyncHandler(async (req, res) => {
       await book.update(req.body); 
       res.redirect(`/books`);
       } else {
-        res.sendStatus(404); 
+        res.sendStatus(404)
       }
   } catch (error) {
     if (error.name === 'SequelizeValidationError'){

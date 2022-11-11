@@ -18,7 +18,7 @@ const pageNotFound = (req, res, next) => {
     console.log('404 Error has occured. Please try again.'); 
   } else {
     err.status = 500; 
-    err.message = "Uh Oh! Looks like it's an error related issue. Please try again." 
+    err.message = "Uh Oh! Looks like it's a server error related issue. Please try again." 
     res.status(err.status); 
     res.render('error', { err, title: 'Server Error' });
     console.log(err.status, err.message)

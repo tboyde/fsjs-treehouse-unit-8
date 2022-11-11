@@ -14,7 +14,7 @@ const sequelize = require('./models/index').sequelize;
 
 (async () => {
   sequelize.sync()
-  .then (() => console.log('Sync Completete'))
+  .then (() => console.log('Sync Complete'))
 })(); 
 
 // view engine setup
