@@ -25,7 +25,7 @@ router.get('/new', (req, res) => {
 });
 
 /* POST create book*/
-router.post('/', asyncHandler(async (req, res) => {
+router.post('/new', asyncHandler(async (req, res) => {
   let book; 
   try {
     book = await Book.create(req.body);
